@@ -6,7 +6,6 @@ import random
 
 APP_KEY = 'xxxx'
 APP_SECRET = 'xxxx'
-twitter = Twython(APP_KEY, APP_SECRET)
 OAUTH_TOKEN = 'xxxx'
 OAUTH_TOKEN_SECRET = 'xxxx'
 
@@ -20,11 +19,20 @@ with open('words-thin.txt') as f:
     words = words + [x.strip('\n') for x in f.readlines()]
 
 while True:
-    word = random.choice(words)
-    if 'cache' in word or 'coherence' in word:
-        tweet = "i love %s - @siderealed" % word
+    word = random.choice(words).strip()
+
+    target = None
+    if 'coherence' in word:
+        target = "siderealed"
+    elif 'cache' in word or 'consistency' in word:
+        target = "luisceze"
     elif 'approx' in word:
-        tweet = "i love %s - @samps" % word
+        target = "samps"
+    elif 'compiler' in word or 'software' in word:
+        target = "ztatlock"
+
+    if target is not None:
+        tweet = "i love %s almost as much as @%s" % (word, target)
     else:
         tweet = "i love %s" % word
 
