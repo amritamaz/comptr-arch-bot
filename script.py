@@ -10,9 +10,14 @@ twitter = Twython(APP_KEY, APP_SECRET)
 OAUTH_TOKEN = '2897787816-JoTwMLISEKkh87ZynvLjAa7Sn0cpMP9ExfZNVq8'
 OAUTH_TOKEN_SECRET = 'ic9EassOE0XlTKZ8KPsrg9QeCOc2xQlaIg3JuBM7oGANS'
 
+# boring udacity list
 page = requests.get('https://www.udacity.com/wiki/ud233/glossary')
 soup = BeautifulSoup(page.content)
 words = [n.text[:-1] for n in soup.find_all('strong')]
+
+#more robust patterson-hennesy list
+with open('words-thin.txt') as f:
+    words = words + [x.strip('\n') for x in f.readlines()]
 
 while True:
     word = random.choice(words)
