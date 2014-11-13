@@ -4,11 +4,11 @@ from twython import Twython
 
 import random
 
-APP_KEY = 'ZManrilCBbut2rqgNnrHcPROk'
-APP_SECRET = '9cTA1tKvMRoHPLrWla0VMwwNrxWRF488MbQd3ahJbaxuEtbuRU'
+APP_KEY = 'xxxx'
+APP_SECRET = 'xxxx'
 twitter = Twython(APP_KEY, APP_SECRET)
-OAUTH_TOKEN = '2897787816-JoTwMLISEKkh87ZynvLjAa7Sn0cpMP9ExfZNVq8'
-OAUTH_TOKEN_SECRET = 'ic9EassOE0XlTKZ8KPsrg9QeCOc2xQlaIg3JuBM7oGANS'
+OAUTH_TOKEN = 'xxxx'
+OAUTH_TOKEN_SECRET = 'xxxx'
 
 # boring udacity list
 page = requests.get('https://www.udacity.com/wiki/ud233/glossary')
